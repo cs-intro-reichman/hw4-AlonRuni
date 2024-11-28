@@ -5,10 +5,10 @@ public class Primes {
             return;
         }
         /*
-         * setting the terms for program:
+         * terms for the program:
          * two arrays: 
-         * first for int numbers from 0 to N
-         * second setting all the boolean values to true apart 0 and 1
+         * first for integer numbers from 0 to N
+         * second setting all the boolean values to true except for 0 and 1
          */
         int N = Integer.parseInt(args[0]);
         int primeNumbersAmount = 0;
@@ -19,10 +19,11 @@ public class Primes {
         }
 
         /*
-         * starting the algo:
-         * standing on a number, checking if all following numbers are devided
-         * by it. if so, changing the matching boolean value to false.
-         * later on, printing all numbers which matching boolean value is true.
+         * starting the algorithm:
+         * standing on a number, checking if all following numbers are divisible.
+         * by it. if so, setting the corresponding boolean value to false
+         * later on, printing all numbers whose corresponding boolean value is true.
+
          */
         for (int i = 2; i < N + 1; i++) {
             if (isPrime[i]) {
@@ -34,7 +35,7 @@ public class Primes {
             }
         }
 
-        // printing all values, storing amount of primes to compute presentage
+        // printing all values, storing the number of primes to compute the percentage.
         System.out.println("Prime numbers up to " + N + ":");
         for (int i = 0; i < isPrime.length; i++) {
             if (isPrime[i] == true) {

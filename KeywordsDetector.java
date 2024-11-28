@@ -21,7 +21,7 @@ public class KeywordsDetector {
     }
 
     // Iterates through all the sentences.
-    // If a sentence contains one or more of the kewords, prints it.
+    // If a sentence contains one or more of the keywords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         String [] duplicatedSentences = duplicateStringArray(sentences);
         String [] duplicatedKeywords = duplicateStringArray(keywords);

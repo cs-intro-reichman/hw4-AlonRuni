@@ -111,9 +111,9 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        int subarrayLength = endIndex - beginIndex;
-        char [] arrSubArray = new char[subarrayLength];
-        for (int i = 0; i < subarrayLength; i++) {
+        int subArrayLength = endIndex - beginIndex;
+        char [] arrSubArray = new char[subArrayLength];
+        for (int i = 0; i < subArrayLength; i++) {
             arrSubArray[i] = arr[i + beginIndex];
         }
 
@@ -166,7 +166,7 @@ public class ArrCharOps {
         
 
         for (int i = 0; i < Math.min(str1.length(), str2.length()); i++) {
-            // signaling back mistake if the char isn't english
+            // signaling back an error if the character isn't English
             char c1 = str1.charAt(i);
             char c2 = str2.charAt(i);
             if (!((c1 >= 'a' && c1 <= 'z') || (c1 >= 'A' && c1 <= 'Z')) || 
@@ -189,7 +189,7 @@ public class ArrCharOps {
         if (str1.length() == str2.length()) {
             return 0; 
         } 
-        // handeling str1 is longer then str2
+        // handling str1 is longer then str2
         return str1.length() > str2.length() ? 1 : -1;
     }
 }
