@@ -1,3 +1,5 @@
+
+
 public class KeywordsDetector {
     public static void main(String[] args) {
         String[] sentences = {
@@ -19,8 +21,60 @@ public class KeywordsDetector {
     }
 
     // Iterates through all the sentences.
-    // If a sentence contains one or more of the kewords, prints it.
+    // If a sentence contains one or more of the keywords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
-        // Replace this comment with your code
+        String [] duplicatedSentences = duplicateStringArray(sentences);
+        String [] duplicatedKeywords = duplicateStringArray(keywords);
+
+        for (int i = 0; i < sentences.length; i++) {
+            duplicatedSentences[i] = lowerCase(duplicatedSentences[i]);   
+        }
+        for (int i = 0; i < keywords.length; i++) {
+            duplicatedKeywords[i] = lowerCase(duplicatedKeywords[i]);   
+        }
+
+        for (int i = 0; i < sentences.length; i++) {
+            for (int j = 0; j < keywords.length; j++) {
+                if (contains(duplicatedSentences[i], duplicatedKeywords[j])) {
+                    System.out.println(sentences[i]);
+                    break;
+                }   
+            }
+               
+        }
+
+    }
+
+    /** Returns the lowercase version of the given string. */
+    public static String lowerCase(String str) {
+       String otherStr = "";
+       for (int i = 0; i < str.length(); i++) {
+           if (str.charAt(i) < 91 && str.charAt(i) > 64) {
+               otherStr += (char) (str.charAt(i) + 32);
+           } else {
+               otherStr += str.charAt(i);
+           }
+       }
+       return otherStr;
+    }
+
+     /** If str1 contains str2, returns true; otherwise returns false. */
+     public static boolean contains(String str1, String str2) {
+        for (int i = 0; i <= str1.length() - str2.length(); i++) {
+            if (str1.substring(i, i + str2.length()).equals(str2) ) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /* duplicate String array */
+    public static String [] duplicateStringArray(String[] arr) {
+        String [] duplicatedString = new String[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            duplicatedString[i] = arr[i];
+        }
+
+        return duplicatedString;
     }
 }
