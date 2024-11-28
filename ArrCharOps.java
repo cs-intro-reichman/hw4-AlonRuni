@@ -170,7 +170,8 @@ public class ArrCharOps {
             char c1 = str1.charAt(i);
             char c2 = str2.charAt(i);
             if (!((c1 >= 'a' && c1 <= 'z') || (c1 >= 'A' && c1 <= 'Z')) || 
-                !((c2 >= 'a' && c2 <= 'z') || (c2 >= 'A' && c2 <= 'Z'))) {
+                !((c2 >= 'a' && c2 <= 'z') || (c2 >= 'A' && c2 <= 'Z')) ||
+                (str1.length() == 0 || str2.length() == 0)) {
                 return -2;
             }
 
@@ -182,14 +183,11 @@ public class ArrCharOps {
             }
 
         }
+
+        if (str1.length() == str2.length()) {
+            return 0; 
+        } 
         // handeling str1 is longer then str2
-        if (str1.length() > str2.length()) {
-            return 1;
-        }
-        // handeling str1 is shorter then str2
-        if (str1.length() < str2.length()) {
-            return -1;
-        }
-        return 0;
+        return str1.length() > str2.length() ? 1 : -1;
     }
 }
