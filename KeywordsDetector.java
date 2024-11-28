@@ -37,6 +37,7 @@ public class KeywordsDetector {
             for (int j = 0; j < keywords.length; j++) {
                 if (contains(duplicatedSentences[i], duplicatedKeywords[j])) {
                     System.out.println(sentences[i]);
+                    break;
                 }   
             }
                
