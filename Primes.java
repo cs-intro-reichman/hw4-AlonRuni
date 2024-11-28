@@ -12,10 +12,6 @@ public class Primes {
          */
         int N = Integer.parseInt(args[0]);
         int primeNumbersAmount = 0;
-        int [] numbers = new int[N + 1];
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = i;
-        }
         
         boolean [] isPrime = new boolean[N + 1];
         for (int i = 2; i < isPrime.length; i++) {
@@ -29,9 +25,11 @@ public class Primes {
          * later on, printing all numbers which matching boolean value is true.
          */
         for (int i = 2; i < N + 1; i++) {
-            for (int j = i + 1; j < N + 1; j++) {
-                if (numbers[j] % numbers[i] == 0) {
-                    isPrime[j] = false;
+            if (isPrime[i]) {
+                for (int j = i + 1; j < N + 1; j++) {
+                    if (j % i == 0) {
+                        isPrime[j] = false;
+                    }
                 }
             }
         }
@@ -40,11 +38,11 @@ public class Primes {
         System.out.println("Prime numbers up to " + N + ":");
         for (int i = 0; i < isPrime.length; i++) {
             if (isPrime[i] == true) {
-                System.out.println(numbers[i]);
+                System.out.println(i);
                 primeNumbersAmount++;
             }
         }
-        System.out.println("There are " + primeNumbersAmount + " primes between 2 and " + N + "(" + (int) ((primeNumbersAmount * 100.0) / N) + "% are primes)");
+        System.out.println("There are " + primeNumbersAmount + " primes between 2 and " + N + " (" + (int) ((primeNumbersAmount * 100.0) / N) + "% are primes)");
 
     }
 
