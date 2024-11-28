@@ -45,17 +45,4 @@ public class Primes {
         System.out.println("There are " + primeNumbersAmount + " primes between 2 and " + N + " (" + (int) ((primeNumbersAmount * 100.0) / N) + "% are primes)");
 
     }
-
-
-
-
-
-
-    public static void setNumbers() {
-        // enter f1 loop after checks
-    }
-
-    public  void setIsPrime(String[] args) {
-        // enter f2 loop after checks
-    }
 }
